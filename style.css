@@ -1,0 +1,11 @@
+.context-tooltip {
+  position: absolute;
+  background: #1f2933;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  max-width: 300px;
+  z-index: 999999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
