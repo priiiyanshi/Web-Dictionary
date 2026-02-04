@@ -1,7 +1,7 @@
-console.log("🔥 Background service worker started");
+console.log(" Background service worker started");
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  console.log("📩 Message received in background:", request);
+  console.log(" Message received in background:", request);
 
   if (request.type !== "EXPLAIN") return;
 
@@ -17,7 +17,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     .then(data => {
       console.log("🧠 Backend response FULL:", data);
 
-      // 🔴 FORCE non-null
+      //  FORCE non-null
       sendResponse({
         explanation:
           data.explanation ||
@@ -25,11 +25,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       });
     })
     .catch(err => {
-      console.error("❌ Fetch failed:", err);
+      console.error(" Fetch failed:", err);
       sendResponse({
-        explanation: "❌ Backend unreachable"
+        explanation: " Backend unreachable"
       });
     });
 
-  return true; // 🚨 REQUIRED — DO NOT REMOVE
+  return true; 
 });
